@@ -3,14 +3,16 @@
   <h5>LACC Login</h5>
   <p>
     User ID<br />
-    <input class="form-control" placeholder="User ID"></input>
+    <%= @user_id = text_field_tag('user_id', nil, {placeholder: 'User ID', class: 'form-control'}) %>
   </p>
   <p>
     Password<br />
-    <input class="form-control" placeholder="Password"></input>
+    <%= @password = text_field_tag('password', nil, {placeholder: 'Password', class: 'form-control'}) %>
+  </p>
+  <p>
+    <%= link_to("Log In", {action: 'authenticate', user_id: @user_id, password: @password}, type: 'button', class: 'btn btn-secondary') %>
   </p>
 </div>
 
 <h3>Blank Forms</h3>
-<%= link_to 'Service', service_service_index_path, type: "button", class: "btn btn-secondary" %>
-<%= link_to 'LACC Back End', back_rmaindex_path, type: "button", class: "btn btn-secondary" %>
+<%= link_to 'LACC Back End', back_index_path, type: "button", class: "btn btn-secondary" %>
