@@ -4,15 +4,8 @@ class HomeController < ApplicationController
     @password
   end
 
-  def authenticate
-    @id = params[:user_id]
-    @password = params[:password]
-
-    if !@id
-      redirect_to(home_admin_index_path)
-    else
-      render('index')
-    end
+  def new
+    
   end
 
   def admin_index

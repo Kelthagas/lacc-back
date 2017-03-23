@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  get 'customers/index'
-
-  get 'customers/new'
-
-  get 'customers/show'
-
-  get 'customers/delete'
-
   root 'home#index'
 
   get 'home/admin_index'
@@ -26,6 +18,10 @@ Rails.application.routes.draw do
   get 'back/display'
   get 'back/computer'
   get 'back/onsite'
+
+  get     '/login',   to: 'home#new'
+  post    '/login',   to: 'sessions#create'
+  delete  '/logout',  to: 'sessions#destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

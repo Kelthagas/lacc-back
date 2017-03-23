@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320201533) do
+ActiveRecord::Schema.define(version: 20170323171359) do
 
   create_table "admin_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "admin_id"
     t.string   "admin_name"
-    t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
     t.index ["admin_id"], name: "index_admin_users_on_admin_id", using: :btree
   end
 
@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 20170320201533) do
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
-    t.string   "password"
     t.string   "user_name"
     t.string   "email"
     t.boolean  "logged_in"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
     t.index ["user_id"], name: "index_users_on_user_id", using: :btree
   end
 

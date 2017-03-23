@@ -1,18 +1,18 @@
 <div class="jumbotron">
   <h1>L.A. Computer Company</h1>
   <h5>LACC Login</h5>
-  <p>
-    User ID<br />
-    <%= @user_id = text_field_tag('user_id', nil, {placeholder: 'User ID', class: 'form-control'}) %>
-  </p>
-  <p>
-    Password<br />
-    <%= @password = text_field_tag('password', nil, {placeholder: 'Password', class: 'form-control'}) %>
-  </p>
-  <p>
-    <%= link_to("Log In", {action: 'authenticate', user_id: @user_id, password: @password}, type: 'button', class: 'btn btn-secondary') %>
-  </p>
+
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id, class: 'form-control', placeholder: "User ID" %><br />
+    <%= f.label :password %><br />
+    <%= f.password_field :password, class: 'form-control', placeholder: "Passowrd" %><br />
+    <p>
+      <%= f.submit("Log In", class: 'btn btn-secondary') %>
+    </p>
+  <% end %>
+
 </div>
 
 <h3>Blank Forms</h3>
-<%= link_to 'LACC Back End', back_index_path, type: "button", class: "btn btn-secondary" %>
+<%= link_to('LACC Back End', back_index_path, class: "btn btn-secondary") %>
