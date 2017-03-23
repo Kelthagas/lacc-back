@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'home#home'
 
   get 'home/admin_index'
   get 'home/user_index'
@@ -19,9 +19,11 @@ Rails.application.routes.draw do
   get 'back/computer'
   get 'back/onsite'
 
-  get     '/login',   to: 'home#new'
+  get     '/login',   to: 'sessions#new'
   post    '/login',   to: 'sessions#create'
   delete  '/logout',  to: 'sessions#destroy'
+
+  get 'sessions/index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
