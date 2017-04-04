@@ -1,18 +1,33 @@
 Rails.application.routes.draw do
   root 'home#home'
 
-  get 'home/admin_index'
-  get 'home/user_index'
-  get 'home/authenticate'
+  get '/menu', to: 'sessions#index'
 
-  resources :users
+  resources :users do
+    member do
+      get :delete
+    end
+  end
 
-  resources :customers
+  resources :customers do
+    member do
+      get :delete
+    end
+  end
 
-  resources :sales
+  resources :sales do
+    member do
+      get :delete
+    end
+  end
 
-  resources :services
+  resources :services do
+    member do
+      get :delete
+    end
+  end
 
+  # Blank Forms
   get 'back/index'
   get 'back/computer_trade_in'
   get 'back/display'
@@ -22,8 +37,6 @@ Rails.application.routes.draw do
   get     '/login',   to: 'sessions#new'
   post    '/login',   to: 'sessions#create'
   delete  '/logout',  to: 'sessions#destroy'
-
-  get 'sessions/index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
