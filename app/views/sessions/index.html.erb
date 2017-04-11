@@ -1,59 +1,9 @@
-<div align="center">
-  <div class="row">
-    <div class="col-3"><%= link_to("Customers", customers_path, class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Quotes", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Orders", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Price List", '#', class: "btn btn-primary") %></div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-3"><%= link_to("Ship", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Suppliers", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("POs", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Admin", '#', class: "btn btn-primary") %></div>
-  </div>
-  <br /><br />
-  <div class="row">
-    <div class="col-3"><%= link_to("Invoices", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Payables", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Receivables", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Journal", '#', class: "btn btn-primary") %></div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-3"><%= link_to("Recurring", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Checks", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Payments", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("GL", '#', class: "btn btn-primary") %></div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-6"><%= link_to("Receive", '#', class: "btn btn-primary") %></div>
-    <div class="col-6"><%= link_to("Inventory", '#', class: "btn btn-primary") %></div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-3"><%= link_to("Contacs", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Schedule", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Labels", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Personel", '#', class: "btn btn-primary") %></div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-3"><%= link_to("Till", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Cart", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Calls", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Support?", '#', class: "btn btn-primary") %></div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-3"><%= link_to("Servie", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Returns", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Expenses", '#', class: "btn btn-primary") %></div>
-    <div class="col-3"><%= link_to("Prospects", '#', class: "btn btn-primary") %></div>
-  </div>
-  <br />
-  <div class="row">
-    <div><%= link_to("Log Out", logout_path, method: :delete, class: "btn btn-secondary") %></div>
-  </div>
+<div class="row">
+    <div class="col-2">
+        <%= react_component 'Menu' %>
+    </div>
+
+    <div class="col-10">
+        <%= react_component 'Customers', { data: @customers } %>
+    </div>
 </div>

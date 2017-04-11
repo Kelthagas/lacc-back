@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  layout 'user'
+
   before_action :check_logged_in, except: [:create, :destroy]
 
   def create
@@ -13,6 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def index
+    @customers = Customer.all
   end
 
   def destroy
