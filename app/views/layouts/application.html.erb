@@ -9,7 +9,26 @@
   </head>
 
   <body>
-    <%= render 'home/header' %>
+    <div id="navigation">
+      <%= render 'home/header' %>
+    </div>
+
+    <% if !flash[:success].blank? %>
+      <div class="container alert alert-success">
+        <%= flash[:success] %>
+      </div>
+    <% elsif !flash[:alert].blank? %>
+      <div class="container alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% elsif !flash[:info].blank? %>
+      <div class="container alert alert-primary">
+        <%= flash[:info] %>
+      </div>
+    <% end %>
+
+    <br />
+
     <div class="container">
       <%= yield %>
     </div>

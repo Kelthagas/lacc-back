@@ -1,0 +1,44 @@
+<button class="btn btn-light" id="backButton"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+<%= link_to "Edit", edit_client_path(@client.id), class: 'btn btn-light' %>
+<div class="text-right">
+  <h1><%= "#{@client.name}" %></h1>
+  <h5><%= "#{@client.company}" %></h5>
+</div>
+<hr />
+<div class="row">
+  <div class="col">
+    <h5>Contact Info</h5>
+    <table>
+      <tr>
+        <td class="tbl-sub_header">Address: </td>
+        <td>
+          <%= "#{@client.street}" %><br />
+          <%= "#{@client.city}, #{@client.state} #{@client.zip}" %>
+        </td>
+      </tr>
+      <tr>
+        <td class="tbl-sub_header">Phone Numbers: </td>
+        <td>
+          <%= "#{@client.phone}" %><br />
+          <%= "#{@client.alt_phone}" %>
+        </td>
+      </tr>
+      <tr>
+        <td class="tbl-sub_header">Email Address: </td>
+        <td><%= "#{@client.email}" %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="col text-right">
+    <h5>Notes</h5>
+    <p><%= "#{@client.notes}" %></p>
+  </div>
+</div>
+<br />
+
+<h4>Off Sites</h4>
+<%= link_to 'Create Off Site', new_off_site_path(client_name: @client.name), class: 'btn btn-success' %>
+<%= render partial: 'off_sites' %>
+<h4>On Sites</h4>
+<%= link_to 'Create On Site', new_onsite_path(client_name: @client.name), class: 'btn btn-success' %>
+<%= render partial: 'on_sites' %>

@@ -1,9 +1,18 @@
-<h1>LACC Back End</h1>
-<%= link_to 'Admin Area', admin_index_path, class: "btn btn-secondary" %><br /><br />
-<%= link_to 'Computer Pre-Owned Sheets', usedcomputer_path, class: "btn btn-secondary" %><br /><br />
-<%= link_to 'Trade-In Sheets', comuputertradein_path, class: "btn btn-secondary" %><br /><br />
-<%= link_to 'Display Pre-Owned Sheets', useddisplay_path, class: "btn btn-secondary" %><br /><br />
-<%= link_to 'One Sites', onsite_index_path, class: "btn btn-secondary" %><br /><br />
-<% if session[:user_id] %>
-  <%= link_to("Log Out", logout_path, method: :delete, class: "btn btn-danger") %>
-<% end %>
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Refurbished Computer / Display Sheets</h4>
+    <%= link_to 'Refurbished Computer Sheet', usedcomputer_path, class: "card-link" %>
+    <%= link_to 'Refurbished Display Sheet', useddisplay_path, class: "card-link" %>
+  </div>
+</div>
+<br />
+
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Blank Sheets</h4>
+    <%= link_to 'Refurbished Computer Sheet', computer_blank_form_path, class: "card-link" %>
+    <%= link_to 'Refurbished Display Sheet', display_blank_form_path, class: "card-link" %>
+    <%= link_to 'Trade-In Sheet', comuputertradein_path, class: "card-link" %>
+    <%= link_to 'Blank Onsite Form', onsite_blank_form_path, class: "card-link" %>
+  </div>
+</div>

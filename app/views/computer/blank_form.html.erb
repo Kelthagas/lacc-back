@@ -1,0 +1,165 @@
+<table width="830" height="80" border="0" cellpadding="2" cellspacing="0" align="center">
+  <tr>
+    <td align="center"><%= image_tag "lacc_logo.jpg", alt: "", width: "71", height: "68" %></td>
+    <td align="center" colspan="5" valign="baseline" class="style2">Refurbished Computer Specifications</td>
+  </tr>
+  <tr>
+    <td colspan="6" align="center" valign="middle" class="Label">
+      <%= image_tag "bar.jpg", alt: "", width: "925", height: "25" %>
+    </td>
+  </tr>
+  <tr>
+    <td class="Title">Model</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Type:</td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+    <td align="center" valign="middle" class="Label">Year: </td>
+    <td colspan="3" class="form-row">
+      <div class="col">
+    	  <%= select_tag :pre_year, options_for_select(year_section), include_blank: "Select", class: "form-control" %>
+      </div>
+      <div class="col">
+        <%= date_select 'model_year', 'model_year', {discard_month: true, discard_day: true, start_year: 2008, end_year: @year, prompt: true}, class: "form-control" %>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Original Part #:</td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+    <td align="center" valign="middle" class="Label">Serial #:</td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+    <td align="center" valign="middle" class="Label">Code:</td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="6" class="Title">Specs</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Processor Speed: </td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+    <td align="center" valign="middle" class="Label">CPU Type: </td>
+    <td>
+    	<input type="text" class="form-control">
+    </td>
+    <td align="center" valign="middle" class="Label">Screen Size: </td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Hard Drive:</td>
+    <td>
+    	<input type="text" class="form-control">
+    </td>
+    <td align="center" valign="middle" class="Label">Optical Drive:</td>
+    <td>
+    	<input type="text" class="form-control">
+    </td>
+    <td align="center" valign="middle" class="Label">Card Slot:</td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Installed RAM:</td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+    <td align="center" valign="middle" class="Label">Max RAM:</td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+    <td align="center" valign="middle" class="Label">Open Slots:</td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">OS:</td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+    <td align="center" valign="middle" class="Label">Max OS</td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+    <td align="center" valign="middle" class="Label">Batt. Test Results:</td>
+    <td>
+      <%= select_tag :battery_test, options_for_select(battery), include_blank: "Select", class: "form-control" %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Video Card:</td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+    <td align="center" valign="middle" class="Label">Video RAM:</td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+    <td align="center" valign="middle" class="Label">Video Port:</td>
+    <td>
+      <input type="text" class="form-control">
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">WiFi:</td>
+    <td>
+    	<%= select_tag :wifi, options_for_select(yes_no), include_blank: "Select", class: "form-control" %>
+    </td>
+    <td align="center" valign="middle" class="Label">Bluetooth:</td>
+    <td>
+    	<%= select_tag :bluetooth, options_for_select(yes_no), include_blank: "Select", class: "form-control" %>
+    </td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" class="Label">Notes:</td>
+    <td colspan="6"><%= text_field_tag 'notes', nil, {class: 'form-control', size: 100} %></td>
+  </tr>
+  <tr>
+    <td height="10" colspan="6" align="center" valign="middle">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="6" align="center" valign="middle" class="Footer">All refurbished computers include a 90 day parts and labor warranty.*<br />
+      All batteries are considered AS IS and do not carry any warranty.</td>
+  </tr>
+  <tr>
+    <td colspan="6" align="center" valign="middle" class="Label">*Warranty restrictions apply. Purchase price may be refunded rather than repairing at the discretion of LA Computer Company. <br />
+      Batteries purchased with used products do not qualify for any warranty including any Apple Repair Extension Programs or recalls.</td>
+  </tr>
+</table>

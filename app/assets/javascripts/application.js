@@ -10,12 +10,27 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require tether
+//= require jquery3
 //= require jquery_ujs
+//= require jquery-ui
+//= require lodash
 //= require turbolinks
+//= require popper
 //= require bootstrap-sprockets
-//= require react
-//= require react_ujs
-//= require components
+//= require bootbox
+//= require moment
 //= require_tree .
+
+var handleDelete;
+var handleBack;
+var handleNavigation;
+var handleCalendar;
+var handleClients;
+
+$(document).on("turbolinks:load", function() {
+  handleDelete();
+  handleBack();
+  handleNavigation();
+  handleCalendar();
+  handleClients();
+})

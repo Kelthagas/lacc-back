@@ -1,0 +1,60 @@
+<h1 align="center">Off Site Service</h1>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <%= link_to new_off_site_path, class: "btn btn-success" do %>
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    <% end %>
+  </div>
+  <nav aria-label="Page navigation example col">
+    <ul class="pagination">
+      <li class="page-item">
+        <% if @page != 1 %>
+          <%= link_to off_sites_path(page: (@page - 1)), class: 'page-link' do %>
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          <% end %>
+        <% end %>
+      </li>
+      <% build_pagination(@page, @max_page).each do |page| %>
+        <li class="page-item"><%= link_to "#{page}", off_sites_path(page: page), class: 'page-link' %></li>
+      <% end %>
+      <li class="page-item">
+        <% if @page != @max_page %>
+          <%= link_to off_sites_path(page: (@page + 1)), class: 'page-link' do %>
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          <% end %>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<br />
+
+<table class="table">
+  <thead>
+    <th>Service Ticket</th>
+    <th>Client Name</th>
+    <th>Location Shipped</th>
+    <th>Options</th>
+  </thead>
+  <tbody>
+    <% @off_sites.each do |off_site| %>
+      <tr id="off_sites-<%= "#{off_site.id}" %>">
+        <td><%= off_site.service_order %></td>
+        <td><%= off_site.client.name %></td>
+        <td><%= off_site.location %></td>
+        <td>
+          <div class="btn-group">
+            <%= link_to 'Show / Print', off_site_path(off_site), class: "btn btn-light" %>
+            <%= link_to 'Edit', edit_off_site_path(off_site), class: "btn btn-light" %>
+            <button class="btn btn-danger">Delete</button>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
